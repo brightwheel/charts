@@ -53,7 +53,7 @@ spec:
         lifecycle:
           preStop:
             exec:
-              command: ["/bin/bash", "-l", "-c", "echo 'PAUSE;' | psql -p 6432 pgbouncer -h /tmp"]      
+              command: ["/bin/bash", "-c", "echo 'PAUSE;' | psql -p 6432 pgbouncer -h /tmp"]      
         readinessProbe:
           exec:
             command:
