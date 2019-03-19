@@ -54,7 +54,7 @@ spec:
           preStop:
             exec:
               # Allow existing queries clients to complete within 120 seconds
-              command: ["/bin/sh", "-c", "killall -INT pgbouncer && sleep 120"]    
+              command: ["/bin/sh", "-c", "kill -2 $(ps aux | grep 'pgbouncer' | awk '{print $2}') && sleep 120"]    
         readinessProbe:
           exec:
             command:
