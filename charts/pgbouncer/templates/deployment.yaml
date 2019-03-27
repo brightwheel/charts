@@ -54,8 +54,7 @@ spec:
         lifecycle:
           preStop:
             exec:
-              command:
-                - "kill -INT 1"   
+              command: ["kill", "-INT", "1"]   
         readinessProbe:
           exec:
             command:
