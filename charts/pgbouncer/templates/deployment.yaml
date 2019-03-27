@@ -54,8 +54,7 @@ spec:
         lifecycle:
           preStop:
             exec:
-              # Allow existing queries clients to complete within 120 seconds
-              command: ["/bin/sh", "-c", "kill -INT 1"]   
+              command: ["kill -INT 1"]   
         readinessProbe:
           exec:
             command:
