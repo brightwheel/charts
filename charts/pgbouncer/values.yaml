@@ -1,8 +1,8 @@
 ## Standard settings for the image and pull policy.
 ## See https://kubernetes.io/docs/concepts/containers/images/
-image: futuretechindustries/pgbouncer-kube
+image: 418413468596.dkr.ecr.us-east-1.amazonaws.com/pgbouncer
 imagePullPolicy: IfNotPresent
-imageTag: '0.5'
+imageTag: '0.2'
 
 ## The number of PgBouncer pods.
 replicasCount: 2
