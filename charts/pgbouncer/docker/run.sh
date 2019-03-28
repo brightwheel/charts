@@ -13,6 +13,4 @@ cat << EOF > /pgbouncer/pgbouncer.config
 $(for i in $(find /pgbouncer-config/*);do echo "$(basename $i)=$(cat $i)";done)
 EOF
 
-echo "PgBouncer configuration file:"
-cat /pgbouncer/pgbouncer.config
 exec pgbouncer /pgbouncer/pgbouncer.config
