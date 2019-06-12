@@ -18,6 +18,7 @@ spec:
       labels:
         app: {{ .Release.Name }}
     spec:
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
       containers:
       - name: {{ .Release.Name }}
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
