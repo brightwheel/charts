@@ -91,3 +91,6 @@ probes:
     initialDelaySeconds: 5
     successThreshold: 1
     failureThreshold: 8
+
+# Default to the real default.
+terminationGracePeriodSeconds: 60
