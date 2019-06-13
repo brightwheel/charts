@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   factom-ha:
   - apiVersion: v1
-    created: 2019-06-13T14:23:10.039114553+12:00
+    created: 2019-06-13T14:33:58.00128681+12:00
     description: A Helm chart for Kubernetes
     digest: 49deda37c1ad566717e32de0a3cfd0889176cd796b7e911813251d7ff0e77bc9
     name: factom-ha
@@ -10,9 +10,27 @@ entries:
     - factom-ha-0.1.0.tgz
     version: 0.1.0
   pgbouncer:
-  - created: 2019-06-13T14:23:10.039424678+12:00
+  - created: 2019-06-13T14:33:58.002259354+12:00
     description: Chart for PGBouncer
-    digest: e432a354ea8317da886feec8b1819b8dc603f46db9bc97d8e371fa1b6c413ac3
+    digest: a2dc566b20dc97db8adb9e21b9592073131d73d3b41b88cd192bc9955adf9974
+    engine: gotpl
+    home: https://pgbouncer.github.io
+    keywords:
+    - postgresql
+    - database
+    - sql
+    maintainers:
+    - email: ops@futuretech.industries
+      name: FutureTech Industries
+    name: pgbouncer
+    sources:
+    - https://github.com/clearbit/charts
+    urls:
+    - pgbouncer-0.2.2.tgz
+    version: 0.2.2
+  - created: 2019-06-13T14:33:58.001939648+12:00
+    description: Chart for PGBouncer
+    digest: eb3f07b0345ff67914e91f66cae724b68ddec387f7284a5e22249f3ce4f3ae5f
     engine: gotpl
     home: https://pgbouncer.github.io
     keywords:
@@ -28,4 +46,22 @@ entries:
     urls:
     - pgbouncer-0.2.1.tgz
     version: 0.2.1
-generated: 2019-06-13T14:23:10.038835441+12:00
+  - created: 2019-06-13T14:33:58.001617413+12:00
+    description: Chart for PGBouncer
+    digest: e432a354ea8317da886feec8b1819b8dc603f46db9bc97d8e371fa1b6c413ac3
+    engine: gotpl
+    home: https://pgbouncer.github.io
+    keywords:
+    - postgresql
+    - database
+    - sql
+    maintainers:
+    - email: ops@futuretech.industries
+      name: FutureTech Industries
+    name: pgbouncer
+    sources:
+    - https://github.com/clearbit/charts
+    urls:
+    - pgbouncer-0.2.0.tgz
+    version: 0.2.0
+generated: 2019-06-13T14:33:58.000991804+12:00
