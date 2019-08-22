@@ -60,17 +60,7 @@ nodeSelector: null
   ##role: proxies
 
 ## Probe (health check) configuration.
-## If username and password aren't configured, they are defaulted as the global username and password.
-## For maximum security, create a read-only user and use it for the probes.
 probes:
-  username: null
-  password: null
-  ## Change this to a database the user has access to.
-  database: 'postgres'
-  ## Query to use for the health check.
-  ## This will be run against the database frequently and should do little to no intensive work.
-  ## The goal is to verify that the connection is good, so the following is usually fine.
-  query: 'select 1'
   ## Required. Config for the readiness probe. These values match the Kubernetes API.
   ## You may need to up timeoutSeconds if your application does primarily long-running queries or you're using session pooling.
   ## The goal of the readiness probe is to direct connections toward PgBouncer instances that can handle the query.

@@ -14,7 +14,6 @@ spec:
       annotations:
         checksum/pgbouncer-config-configmap: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
         checksum/pgbouncer-creds-secret: {{ include (print $.Template.BasePath "/secret-creds.yaml") . | sha256sum }}
-        checksum/pgbouncer-probes-secret: {{ include (print $.Template.BasePath "/secret-probes.yaml") . | sha256sum }}
       labels:
         app: {{ .Release.Name }}
     spec:
@@ -59,7 +58,7 @@ spec:
         readinessProbe:
           exec:
             command:
-            - /do_probe.sh
+            - pg_isready
           initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds }}
           periodSeconds: {{ .Values.probes.readiness.periodSeconds }}
           timeoutSeconds: {{ .Values.probes.readiness.timeoutSeconds }}
@@ -69,7 +68,7 @@ spec:
         livenessProbe:
           exec:
             command:
-            - /do_probe.sh
+            - pg_isready
           periodSeconds: {{ .Values.probes.liveness.periodSeconds }}
           initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds }}
           timeoutSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
@@ -86,9 +85,6 @@ spec:
         - name: pgbouncer-config
           configMap:
             name: {{ .Release.Name }}-pgbouncer-config
-        - name: pgbouncer-probes
-          secret: 
-            secretName: {{ .Release.Name }}-probes-settings
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
