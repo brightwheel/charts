@@ -33,9 +33,6 @@ spec:
         volumeMounts:
         - name: pgbouncer-config
           mountPath: /pgbouncer-config
-        - name: pgbouncer-probes
-          mountPath: /pgbouncer-probes
-          readOnly: true
         env:
         - name: PG_USER
           value: {{ .Values.username }}
@@ -58,7 +55,11 @@ spec:
         readinessProbe:
           exec:
             command:
-            - pg_isready
+            - pg_isready 
+            - -p 
+            - "6432"
+            - -h 
+            - "127.0.0.1"
           initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds }}
           periodSeconds: {{ .Values.probes.readiness.periodSeconds }}
           timeoutSeconds: {{ .Values.probes.readiness.timeoutSeconds }}
@@ -68,7 +69,11 @@ spec:
         livenessProbe:
           exec:
             command:
-            - pg_isready
+            - pg_isready 
+            - -p 
+            - "6432"
+            - -h 
+            - "127.0.0.1"
           periodSeconds: {{ .Values.probes.liveness.periodSeconds }}
           initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds }}
           timeoutSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
