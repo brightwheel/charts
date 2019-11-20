@@ -51,7 +51,8 @@ spec:
         lifecycle:
           preStop:
             exec:
-              command: ["kill", "-INT", "1", "&&", "sleep", "120"]   
+              # Signal pgbouncer to drain connections and give it two minutes to do so.
+              command: ["/bin/sh", "-c", "kill -INT 1 && sleep 120"]
         readinessProbe:
           exec:
             command:
