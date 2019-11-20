@@ -51,8 +51,8 @@ spec:
         lifecycle:
           preStop:
             exec:
-              # Signal pgbouncer to drain connections and give it two minutes to do so.
-              command: ["/bin/sh", "-c", "kill -INT 1 && sleep 120"]
+              # Signal pgbouncer to drain connections (blocking) and shutdown. Should be graceful.
+              command: ["/bin/sh", "-c", "while pgrep pgbouncer; do psql 'host=/tmp port=6432 dbname=pgbouncer' -c 'PAUSE' -c SHUTDOWN'; sleep 1; done"]
         readinessProbe:
           exec:
             command:
