@@ -52,7 +52,7 @@ spec:
           preStop:
             exec:
               # Signal pgbouncer to drain connections (blocking) and shutdown. Should be graceful.
-              command: ["/bin/sh", "-c", "while pgrep pgbouncer; do psql 'host=/tmp port=6432 dbname=pgbouncer' -c 'PAUSE' -c 'SHUTDOWN'; sleep 1; done"]
+              command: ["/bin/sh", "-c", "pkill -INT -f pgbouncer; while kill -0 1; do sleep 1; done"]
         readinessProbe:
           exec:
             command:
