@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   factom-ha:
   - apiVersion: v1
-    created: 2019-11-21T08:57:33.646457274+13:00
+    created: 2019-11-21T10:11:47.300271409+13:00
     description: A Helm chart for Kubernetes
     digest: 49deda37c1ad566717e32de0a3cfd0889176cd796b7e911813251d7ff0e77bc9
     name: factom-ha
@@ -10,7 +10,25 @@ entries:
     - factom-ha-0.1.0.tgz
     version: 0.1.0
   pgbouncer:
-  - created: 2019-11-21T08:57:33.64764206+13:00
+  - created: 2019-11-21T10:11:47.301676636+13:00
+    description: Chart for PGBouncer
+    digest: 3ae4f83767299ddc12418a5964b388e4c62a9b63a15534c5ff92cb56267acc22
+    engine: gotpl
+    home: https://pgbouncer.github.io
+    keywords:
+    - postgresql
+    - database
+    - sql
+    maintainers:
+    - email: ops@futuretech.industries
+      name: FutureTech Industries
+    name: pgbouncer
+    sources:
+    - https://github.com/clearbit/charts
+    urls:
+    - pgbouncer-0.2.5.tgz
+    version: 0.2.5
+  - created: 2019-11-21T10:11:47.301468229+13:00
     description: Chart for PGBouncer
     digest: e4e8d43ba36b9e9711bb9a6743a53c2c2ad0cd2cab476842389810a624993a69
     engine: gotpl
@@ -28,7 +46,7 @@ entries:
     urls:
     - pgbouncer-0.2.4.tgz
     version: 0.2.4
-  - created: 2019-11-21T08:57:33.64741829+13:00
+  - created: 2019-11-21T10:11:47.301254963+13:00
     description: Chart for PGBouncer
     digest: 06ae9d3b3859fc79161255b81027d7e6c4ef6def5d9441bcd66f2634c2394091
     engine: gotpl
@@ -46,7 +64,7 @@ entries:
     urls:
     - pgbouncer-0.2.3.tgz
     version: 0.2.3
-  - created: 2019-11-21T08:57:33.647202031+13:00
+  - created: 2019-11-21T10:11:47.301052643+13:00
     description: Chart for PGBouncer
     digest: a2dc566b20dc97db8adb9e21b9592073131d73d3b41b88cd192bc9955adf9974
     engine: gotpl
@@ -64,7 +82,7 @@ entries:
     urls:
     - pgbouncer-0.2.2.tgz
     version: 0.2.2
-  - created: 2019-11-21T08:57:33.646964518+13:00
+  - created: 2019-11-21T10:11:47.300830336+13:00
     description: Chart for PGBouncer
     digest: eb3f07b0345ff67914e91f66cae724b68ddec387f7284a5e22249f3ce4f3ae5f
     engine: gotpl
@@ -82,7 +100,7 @@ entries:
     urls:
     - pgbouncer-0.2.1.tgz
     version: 0.2.1
-  - created: 2019-11-21T08:57:33.646720924+13:00
+  - created: 2019-11-21T10:11:47.300555375+13:00
     description: Chart for PGBouncer
     digest: e432a354ea8317da886feec8b1819b8dc603f46db9bc97d8e371fa1b6c413ac3
     engine: gotpl
@@ -100,4 +118,4 @@ entries:
     urls:
     - pgbouncer-0.2.0.tgz
     version: 0.2.0
-generated: 2019-11-21T08:57:33.64610193+13:00
+generated: 2019-11-21T10:11:47.300058099+13:00
